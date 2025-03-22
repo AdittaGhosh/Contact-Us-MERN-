@@ -59,7 +59,8 @@ router.delete('/:id', auth, async (req, res) => {
       return res.status(404).json({ message: 'Contact not found' });
     }
 
-    await contact.remove();
+    // Use deleteOne() instead of remove()
+    await Contact.deleteOne({ _id: req.params.id });
     res.json({ message: 'Contact removed' });
   } catch (err) {
     console.error(err.message);
