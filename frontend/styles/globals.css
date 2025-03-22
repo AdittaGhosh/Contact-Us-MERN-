@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #E6F0FA 0%, #D6E6FF 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-container {
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.btn-primary {
+  background-color: #1E3A8A;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1E40AF;
+}
+
+.icon-btn {
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: #E5E7EB;
+}
+
+.table-header {
+  background-color: #E5E7EB;
+  color: #1F2937;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.table-row {
+  transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: #F3F4F6;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Adjusted column widths for better visibility */
+th:nth-child(1), td:nth-child(1) { width: 5%; }   /* No. */
+th:nth-child(2), td:nth-child(2) { width: 10%; }  /* Name */
+th:nth-child(3), td:nth-child(3) { width: 15%; }  /* Email */
+th:nth-child(4), td:nth-child(4) { width: 40%; }  /* Message */
+th:nth-child(5), td:nth-child(5) { width: 8%; }   /* Date */
+th:nth-child(6), td:nth-child(6) { width: 25%; }  /* Actions (Increased) */
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td:nth-child(4) {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-height: 60px;
+}
+
+/* Ensure buttons are visible */
+td:nth-child(6) {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap */
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* More spacing between buttons */
+}
+
+/* Updated button styles */
+.small-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px; /* Increased padding */
+  border-radius: 6px;
+  font-size: 14px; /* Slightly increased font size */
+  white-space: nowrap;
+  min-width: 90px; /* Increased button width */
+}
+
+/* Adjust icon size for better visibility */
+.small-btn svg {
+  width: 16px; 
+  height: 16px;
+}
+
+/* Different button colors */
+.small-btn.text-blue-600 { background-color: #E0F2FE; color: #0369A1; }
+.small-btn.text-green-600 { background-color: #DCFCE7; color: #047857; }
+.small-btn.text-red-600 { background-color: #FEE2E2; color: #DC2626; }
+
+.small-btn:hover {
+  opacity: 0.85;
+}
