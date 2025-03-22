@@ -105,7 +105,7 @@ export default function ContactList() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/contact/download/pdf', {
+      const res = await fetch('http://localhost:5000/api/contact/download', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
@@ -116,12 +116,15 @@ export default function ContactList() {
       const a = document.createElement('a');
       a.href = url;
       a.download = 'contacts.pdf';
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     } catch (err) {
       setError(err.message);
     }
   };
+  
 
   const handleLogout = async () => {
     const token = localStorage.getItem('token');
