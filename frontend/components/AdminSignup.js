@@ -18,7 +18,7 @@ export default function AdminSignup() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/auth/signup', {
+      const res = await fetch('https://cybercraft-backend.onrender.com/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email, password: formData.password }),
@@ -32,11 +32,11 @@ export default function AdminSignup() {
   };
 
   const handleGoogleSignup = () => {
-    window.location.href = 'http://localhost:5000/auth/google';
+    window.location.href = 'https://cybercraft-backend.onrender.com/auth/google';
   };
 
   const handleFacebookSignup = () => {
-    window.location.href = 'http://localhost:5000/auth/facebook';
+    window.location.href = 'https://cybercraft-backend.onrender.com/auth/facebook';
   };
 
   return (

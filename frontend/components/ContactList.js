@@ -20,7 +20,7 @@ export default function ContactList() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const res = await fetch('https://cybercraft-backend.onrender.com/api/contact', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
@@ -59,7 +59,7 @@ export default function ContactList() {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const res = await fetch('https://cybercraft-backend.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ export default function ContactList() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/contact/download', {
+      const res = await fetch('https://cybercraft-backend.onrender.com/api/contact/download', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
@@ -133,7 +133,7 @@ export default function ContactList() {
       return;
     }
     try {
-      await fetch('http://localhost:5000/auth/logout', {
+      await fetch('https://cybercraft-backend.onrender.com/auth/logout', {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -176,7 +176,7 @@ export default function ContactList() {
   
     try {
       console.log('Sending DELETE request for contact ID:', contact._id);
-      const res = await fetch(`http://localhost:5000/api/contact/${contact._id}`, {
+      const res = await fetch(`https://cybercraft-backend.onrender.com/api/contact/${contact._id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
